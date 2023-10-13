@@ -1,0 +1,12 @@
+CREATE TABLE personas (
+dni INT PRIMARY KEY,
+nombre VARCHAR(30) NOT NULL,
+apellido VARCHAR(30) NOT NULL);
+
+CREATE TABLE usuarios (
+mail VARCHAR(40) PRIMARY KEY,
+nickname VARCHAR(20) NOT NULL,
+clave VARCHAR(20) NOT NULL,
+persona INT NOT NULL,
+FOREIGN KEY (persona) REFERENCES personas(dni)
+);
